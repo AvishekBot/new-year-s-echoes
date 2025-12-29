@@ -1,13 +1,40 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from 'react';
+import HeroSection from '@/components/sections/HeroSection';
+import GreetingSection from '@/components/sections/GreetingSection';
+import MoodSection from '@/components/sections/MoodSection';
+import WishCardsSection from '@/components/sections/WishCardsSection';
+import ReflectionSection from '@/components/sections/ReflectionSection';
+import MirrorSection from '@/components/sections/MirrorSection';
+import JournalSection from '@/components/sections/JournalSection';
+import TimeCapsuleSection from '@/components/sections/TimeCapsuleSection';
+import RandomWishSection from '@/components/sections/RandomWishSection';
+import PeaceModeSection from '@/components/sections/PeaceModeSection';
+import MusicSection from '@/components/sections/MusicSection';
+import ShareSection from '@/components/sections/ShareSection';
+import FooterSection from '@/components/sections/FooterSection';
 
 const Index = () => {
+  const [peaceModeActive, setPeaceModeActive] = useState(false);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <main className="overflow-x-hidden">
+      <HeroSection peaceModeActive={peaceModeActive} />
+      <GreetingSection />
+      <MoodSection />
+      <WishCardsSection />
+      <ReflectionSection />
+      <MirrorSection />
+      <JournalSection />
+      <TimeCapsuleSection />
+      <RandomWishSection />
+      <PeaceModeSection 
+        peaceModeActive={peaceModeActive} 
+        setPeaceModeActive={setPeaceModeActive} 
+      />
+      <MusicSection />
+      <ShareSection />
+      <FooterSection />
+    </main>
   );
 };
 
